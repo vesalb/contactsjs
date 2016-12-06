@@ -1,5 +1,5 @@
-import {HelloWorld} from './helloworld';
+import {Agenda} from './agenda';
 
-let helloworld = new HelloWorld();
+let agenda = new Agenda ('Vesal', 'Fayazi', 'Sverige');
 
-helloworld.sayHello('Vesal');
+agenda.displayContact('Fayazi');
