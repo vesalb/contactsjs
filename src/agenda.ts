@@ -8,17 +8,11 @@ export class Contact {
         this.surname=theSurname;
         this.address=theAddress;
     }
-
-
-    // public addContact(theName: string){
-    //     this.name=theName;
-    //     console.log('New contact added ${name}')
-
-    // }
     
-    // public displayContact(surname){
-    //     console.log('${name}, ${surname} and ${address}')
-    // }
+    public displayContact(surname){
+        this.name=surname;
+        return this.name + ' ' + this.surname + ' ' + this.address;
+    }
 
 }
 
