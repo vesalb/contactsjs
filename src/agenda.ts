@@ -1,4 +1,4 @@
-export class Contact {
+class Contact {
     name: string;
     surname: string;
     address: string;
@@ -25,8 +25,8 @@ export class Agenda {
         return this.contacts;
     }
 
-    // public displayContactFromAgenda(surname){
-
-    // }
+    public displayContactFromAgenda(surname){
+        this.contacts
+    }
 
 }
