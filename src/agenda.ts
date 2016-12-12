@@ -1,4 +1,4 @@
-class Contact {
+export class Contact {
     name: string;
     surname: string;
     address: string;
@@ -10,21 +10,23 @@ class Contact {
     }
     
     // public displayContact(surname){
-    //     this.name=surname;
+    //     this.surname=surname;
     //     return this.name + ' ' + this.surname + ' ' + this.address;
     // }
 
 }
 
-export class Agenda extends Contact {
 
-    constructor(name: string, surname: string, address: string){
-        super(name, surname, address);
+export class Agenda {
+    contacts: Contact[] = [];
+    
+    public addContact(newName: string, newSurname: string, newAddress: string){
+        this.contacts.push(new Contact(newName, newSurname, newAddress));
+        return this.contacts;
     }
 
-    public displayContactFromAgenda(surname){
-        this.surname=surname;
-        return this.name + ' ' + this.surname + ' ' + this.address;
-    }
+    // public displayContactFromAgenda(surname){
+
+    // }
 
 }

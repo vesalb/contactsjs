@@ -1,5 +1,7 @@
 import {Agenda} from './agenda';
 
-let agenda = new Agenda ('Vesal', 'Fayazi', 'Regeringsgatan 28');
+let agenda = new Agenda();
 
-console.log("Viewing contact: ", agenda.displayContactFromAgenda('Fayazi'));
+agenda.addContact('Vesal', 'Fayazi', 'Hagsätra');
+
+console.log(agenda);
