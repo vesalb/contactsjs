@@ -25,8 +25,17 @@ export class Agenda {
         return this.contacts;
     }
 
-    public displayContactFromAgenda(surname){
-        this.contacts
+    public searchContactBySurname(searchSurname: string){
+
+            function search(Contact){
+                if (Contact.surname === searchSurname){
+                    return true;
+                } else {
+                    return false
+                }
+            }
+        return this.contacts.filter(search);
+
     }
 
 }
