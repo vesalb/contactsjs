@@ -1,4 +1,4 @@
-class Contact {
+export class Contact {
     name: string;
     surname: string;
     address: string;
@@ -16,7 +16,7 @@ export class Agenda {
     contacts: Contact[] = [];
     
     public addContact(Contact){
-        this.contacts.push(new Contact());
+        this.contacts.push(Contact);
         return this.contacts;
     }
 

@@ -1,11 +1,16 @@
 import {Agenda} from './agenda';
+import {Contact} from './agenda';
 
 let agenda = new Agenda();
 
-agenda.addContact();
-agenda.addContact();
-agenda.addContact();
+let contact = new Contact('Vesal', 'Fayazi', 'Regeringsgatan 28');
+let contact1 = new Contact('Miguel', 'Dominguez', 'Spanish street 5');
+let contact2 = new Contact('Poop', 'Hat', 'Diarrhea alley 24');
 
-let contact = agenda.searchContactBySurname('Fay');
+agenda.addContact(contact);
+agenda.addContact(contact1);
+agenda.addContact(contact2);
 
-console.log(contact);
+let searchContact = agenda.searchContactBySurname('Hat');
+
+console.log(searchContact);
