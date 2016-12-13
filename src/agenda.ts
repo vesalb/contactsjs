@@ -8,11 +8,6 @@ class Contact {
         this.surname=theSurname;
         this.address=theAddress;
     }
-    
-    // public displayContact(surname){
-    //     this.surname=surname;
-    //     return this.name + ' ' + this.surname + ' ' + this.address;
-    // }
 
 }
 
@@ -20,8 +15,8 @@ class Contact {
 export class Agenda {
     contacts: Contact[] = [];
     
-    public addContact(newName: string, newSurname: string, newAddress: string){
-        this.contacts.push(new Contact(newName, newSurname, newAddress));
+    public addContact(Contact){
+        this.contacts.push(new Contact());
         return this.contacts;
     }
 
