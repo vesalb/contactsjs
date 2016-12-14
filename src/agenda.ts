@@ -13,23 +13,24 @@ export class Contact {
 
 
 export class Agenda {
-    contacts: Contact[] = [];
+    public contacts: Contact[] = [];
     
-    public addContact(Contact){
-        this.contacts.push(Contact);
+    public addContact(contact: Contact){
+        this.contacts.push(contact);
         return this.contacts;
     }
 
     public searchContactBySurname(searchSurname: string){
 
-            function search(Contact){
-                if (Contact.surname === searchSurname){
-                    return true;
-                } else {
-                    return false
-                }
+        function search(contact: Contact){
+            if (contact.surname === searchSurname){
+                return true;
+            } else {
+                return false
             }
-        return this.contacts.filter(search);
+        }
+        
+    return this.contacts.filter(search);
 
     }
 

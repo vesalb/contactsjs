@@ -11,6 +11,10 @@ agenda.addContact(contact);
 agenda.addContact(contact1);
 agenda.addContact(contact2);
 
-let searchContact = agenda.searchContactBySurname('Hat');
+let searchContact = agenda.searchContactBySurname('Hatt');
 
-console.log(searchContact);
+if (searchContact.length == 1){
+    console.log(searchContact);
+}else{
+    console.log('Contact is missing');
+}
