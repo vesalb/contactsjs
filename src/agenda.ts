@@ -8,25 +8,30 @@ export class Contact {
         this.surname=theSurname;
         this.address=theAddress;
     }
-    
-    // public displayContact(surname){
-    //     this.surname=surname;
-    //     return this.name + ' ' + this.surname + ' ' + this.address;
-    // }
 
 }
 
 
 export class Agenda {
-    contacts: Contact[] = [];
+    public contacts: Contact[] = [];
     
-    public addContact(newName: string, newSurname: string, newAddress: string){
-        this.contacts.push(new Contact(newName, newSurname, newAddress));
+    public addContact(contact: Contact){
+        this.contacts.push(contact);
         return this.contacts;
     }
 
-    // public displayContactFromAgenda(surname){
+    public searchContactBySurname(searchSurname: string){
 
-    // }
+        function search(contact: Contact){
+            if (contact.surname === searchSurname){
+                return true;
+            } else {
+                return false
+            }
+        }
+        
+    return this.contacts.filter(search);
+
+    }
 
 }
