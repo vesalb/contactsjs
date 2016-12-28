@@ -1,6 +1,7 @@
 import {Agenda} from './agenda';
 import {Person} from './agenda';
 import {Pet} from './agenda';
+// import {Contacts} from './agenda';
 
 
 let agenda = new Agenda();
@@ -18,6 +19,8 @@ agenda.addContact (person3);
 agenda.addContact (pet1);
 agenda.addContact (pet2);
 agenda.addContact (pet3);
+
+console.log(pet2);
 
 let searchContact = agenda.searchInAgenda('Rabbit');
 

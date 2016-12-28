@@ -1,4 +1,4 @@
-interface Contacts{
+export interface Contacts{
     name: string;
     secondAttribute: string;
     thirdAttribute: string;
@@ -18,11 +18,9 @@ export class Person implements Contacts{
 }
 
 export class Pet implements Contacts{
-    name: string;
-    secondAttribute: string;
-    thirdAttribute: string;
-
-    
+    name;
+    secondAttribute;
+    thirdAttribute;
 
     constructor (petName: string, petType: string, petOwner: string){
         this.name=petName;
