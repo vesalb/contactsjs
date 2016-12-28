@@ -9,10 +9,25 @@ export class Person implements Contacts{
     secondAttribute: string;
     thirdAttribute: string;
 
-    constructor (theName: string, theSurname: string, theAddress: string){
-        this.name=theName;
-        this.secondAttribute=theSurname;
-        this.thirdAttribute=theAddress;
+    constructor (personName: string, personSurname: string, personAddress: string){
+        this.name=personName;
+        this.secondAttribute=personSurname;
+        this.thirdAttribute=personAddress;
+    }
+
+}
+
+export class Pet implements Contacts{
+    name: string;
+    secondAttribute: string;
+    thirdAttribute: string;
+
+    
+
+    constructor (petName: string, petType: string, petOwner: string){
+        this.name=petName;
+        this.secondAttribute=petType;
+        this.thirdAttribute=petOwner;
     }
 
 }
