@@ -1,3 +1,9 @@
+// export interface Cs{
+//     name: string;
+//     secondAttribute: string;
+//     thirdAttribute: string;
+// }
+
 export class Contact {
     name: string;
     surname: string;
@@ -20,7 +26,7 @@ export class Agenda {
         return this.contacts;
     }
 
-    public searchContactBySurname(searchSurname: string){
+    public searchInAgenda(searchSurname: string){
 
         function search(contact: Contact){
             if (contact.surname === searchSurname){
