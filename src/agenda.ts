@@ -1,8 +1,8 @@
-// export interface Cs{
-//     name: string;
-//     secondAttribute: string;
-//     thirdAttribute: string;
-// }
+export interface Cs{
+    name: string;
+    secondAttribute: string;
+    thirdAttribute: string;
+}
 
 export class Contact {
     name: string;
