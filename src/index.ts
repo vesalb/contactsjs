@@ -11,7 +11,7 @@ agenda.addContact(contact);
 agenda.addContact(contact1);
 agenda.addContact(contact2);
 
-let searchContact = agenda.searchContactBySurname('Hatt');
+let searchContact = agenda.searchInAgenda('Hatt');
 
 if (searchContact.length == 1){
     console.log(searchContact);

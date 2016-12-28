@@ -26,10 +26,10 @@ export class Agenda {
         return this.contacts;
     }
 
-    public searchInAgenda(searchSurname: string){
+    public searchInAgenda(searchValue: string){
 
         function search(contact: Contact){
-            if (contact.surname === searchSurname){
+            if (contact.surname === searchValue){
                 return true;
             } else {
                 return false
