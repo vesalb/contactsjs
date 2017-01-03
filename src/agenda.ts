@@ -1,33 +1,39 @@
-export interface Contacts{
+export class Contacts{
     name: string;
-    secondAttribute: string;
-    thirdAttribute: string;
-}
+    surname: string;
+    address: string;
 
-export class Person implements Contacts{
-    name: string;
-    secondAttribute: string;
-    thirdAttribute: string;
-
-    constructor (personName: string, personSurname: string, personAddress: string){
-        this.name=personName;
-        this.secondAttribute=personSurname;
-        this.thirdAttribute=personAddress;
+    constructor (name: string, surname: string, address: string){
+        this.name=name;
+        this.surname=surname;
+        this.address=address;
     }
 
 }
 
-export class Pet implements Contacts{
-    name;
-    secondAttribute;
-    thirdAttribute;
+export class Person{
+    petName: string;
+    personSurname: string;
+    personAddress: string;
 
-    constructor (petName: string, petType: string, petOwner: string){
-        this.name=petName;
-        this.secondAttribute=petType;
-        this.thirdAttribute=petOwner;
+    constructor (name: string, surname: string, address: string){
+        this.petName=name;
+        this.personSurname=surname;
+        this.personAddress=address;
     }
 
+}
+
+export class Pet{
+    petName: string;
+    petType: string;
+    petOwner: string;
+
+    constructor (name: string, type: string, owner: string){
+        this.petName=name;
+        this.petType=type;
+        this.petOwner=owner;
+    } 
 }
 
 
@@ -42,7 +48,7 @@ export class Agenda {
     public searchInAgenda(searchValue: string){
 
         function search(contact: Contacts){
-            if (contact.secondAttribute === searchValue){
+            if (contact.surname === searchValue){
                 return true;
             } else {
                 return false
