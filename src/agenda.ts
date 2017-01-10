@@ -11,30 +11,30 @@ export class Contacts{
 
 }
 
-export class Person{
-    petName: string;
-    personSurname: string;
-    personAddress: string;
+// export class Person{
+//     petName: string;
+//     personSurname: string;
+//     personAddress: string;
 
-    constructor (name: string, surname: string, address: string){
-        this.petName=name;
-        this.personSurname=surname;
-        this.personAddress=address;
-    }
+//     constructor (name: string, surname: string, address: string){
+//         this.petName=name;
+//         this.personSurname=surname;
+//         this.personAddress=address;
+//     }
 
-}
+// }
 
-export class Pet{
-    petName: string;
-    petType: string;
-    petOwner: string;
+// export class Pet{
+//     petName: string;
+//     petType: string;
+//     petOwner: string;
 
-    constructor (name: string, type: string, owner: string){
-        this.petName=name;
-        this.petType=type;
-        this.petOwner=owner;
-    } 
-}
+//     constructor (name: string, type: string, owner: string){
+//         this.petName=name;
+//         this.petType=type;
+//         this.petOwner=owner;
+//     } 
+// }
 
 
 export class Agenda {
