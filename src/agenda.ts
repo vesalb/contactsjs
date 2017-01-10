@@ -1,5 +1,5 @@
-interface search{
-    (searchValue: string) : boolean;
+interface Searchable{
+    search(searchValue:string) : boolean;
 }
 
 export class Contacts{
@@ -13,8 +13,8 @@ export class Contacts{
         this.address=address;
     }
 
-    searchContacts(searchValue: string) {
-        if(searchValue === this.surname){
+    search(searchValue: string) {
+        if(searchValue === this.personSurname){
             return true
         } else {
             return false
@@ -23,7 +23,7 @@ export class Contacts{
 
 }
 
-export class Person{
+export class Person implements Searchable{
     personName: string;
     personSurname: string;
     personAddress: string;
@@ -34,7 +34,7 @@ export class Person{
         this.personAddress=address;
     }
 
-    searchPeron(searchValue: string) {
+    search(searchValue: string) {
         if(searchValue === this.personSurname){
             return true
         } else {
@@ -44,7 +44,7 @@ export class Person{
 
 }
 
-export class Pet{
+export class Pet implements Searchable{
     petName: string;
     petType: string;
     petOwner: string;
@@ -55,7 +55,7 @@ export class Pet{
         this.petOwner=owner;
     }
 
-    searchPet(searchValue: string) {
+    search(searchValue: string) {
         if(searchValue === this.petType){
             return true
         } else {
@@ -76,13 +76,17 @@ export class Agenda {
 
     public searchInAgenda(searchValue: string){
 
-        function search(contact: Contacts){
-            if (contact.surname === searchValue){
-                return true;
-            } else {
-                return false
-            }
+        function search(contact: Searchable){
+            contact.search(searchValue);
         }
+
+        // function search(contact: Contacts){
+        //     if (contact.surname === searchValue){
+        //         return true;
+        //     } else {
+        //         return false
+        //     }
+        // }
         
     return this.contacts.filter(search);
 
