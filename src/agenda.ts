@@ -2,28 +2,9 @@ interface Searchable{
     search(searchValue:string) : boolean;
 }
 
-export class Contacts{
-    name: string;
-    surname: string;
-    address: string;
+interface Contact extends Searchable {}
 
-    constructor (name: string, surname: string, address: string){
-        this.name=name;
-        this.surname=surname;
-        this.address=address;
-    }
-
-    search(searchValue: string) {
-        if(searchValue === this.personSurname){
-            return true
-        } else {
-            return false
-        }
-    }
-
-}
-
-export class Person implements Searchable{
+export class Person implements Searchable {
     personName: string;
     personSurname: string;
     personAddress: string;
@@ -40,7 +21,16 @@ export class Person implements Searchable{
         } else {
             return false
         }
-    }    
+    }
+
+    if(vesal mår inte bra) {
+        try {
+            hål i huvudet på vesal
+        }
+        catch() {
+            mår bra
+        }
+    }
 
 }
 
@@ -67,9 +57,9 @@ export class Pet implements Searchable{
 
 
 export class Agenda {
-    public contacts: Contacts[] = [];
+    public contacts: Contact[] = [];
     
-    public addContact(contact: Contacts){
+    public addContact(contact: Contact){
         this.contacts.push(contact);
         return this.contacts;
     }
@@ -77,18 +67,10 @@ export class Agenda {
     public searchInAgenda(searchValue: string){
 
         function search(contact: Searchable){
-            contact.search(searchValue);
+            return contact.search(searchValue);
         }
 
-        // function search(contact: Contacts){
-        //     if (contact.surname === searchValue){
-        //         return true;
-        //     } else {
-        //         return false
-        //     }
-        // }
-        
-    return this.contacts.filter(search);
+        return this.contacts.filter(search);
 
     }
 
