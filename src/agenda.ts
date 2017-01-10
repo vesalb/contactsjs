@@ -1,3 +1,7 @@
+interface search{
+    (searchValue: string) : boolean;
+}
+
 export class Contacts{
     name: string;
     surname: string;
@@ -9,32 +13,57 @@ export class Contacts{
         this.address=address;
     }
 
+    searchContacts(searchValue: string) {
+        if(searchValue === this.surname){
+            return true
+        } else {
+            return false
+        }
+    }
+
 }
 
-// export class Person{
-//     petName: string;
-//     personSurname: string;
-//     personAddress: string;
+export class Person{
+    personName: string;
+    personSurname: string;
+    personAddress: string;
 
-//     constructor (name: string, surname: string, address: string){
-//         this.petName=name;
-//         this.personSurname=surname;
-//         this.personAddress=address;
-//     }
+    constructor (name: string, surname: string, address: string){
+        this.personName=name;
+        this.personSurname=surname;
+        this.personAddress=address;
+    }
 
-// }
+    searchPeron(searchValue: string) {
+        if(searchValue === this.personSurname){
+            return true
+        } else {
+            return false
+        }
+    }    
 
-// export class Pet{
-//     petName: string;
-//     petType: string;
-//     petOwner: string;
+}
 
-//     constructor (name: string, type: string, owner: string){
-//         this.petName=name;
-//         this.petType=type;
-//         this.petOwner=owner;
-//     } 
-// }
+export class Pet{
+    petName: string;
+    petType: string;
+    petOwner: string;
+
+    constructor (name: string, type: string, owner: string){
+        this.petName=name;
+        this.petType=type;
+        this.petOwner=owner;
+    }
+
+    searchPet(searchValue: string) {
+        if(searchValue === this.petType){
+            return true
+        } else {
+            return false
+        }
+    }
+
+}
 
 
 export class Agenda {
