@@ -1,19 +1,16 @@
-import {Agenda} from './agenda';
-import {Contact} from './agenda';
+import {Agenda, Person, Pet} from './agenda';
 
 let agenda = new Agenda();
 
-let contact = new Contact('Vesal', 'Fayazi', 'Regeringsgatan 28');
-let contact1 = new Contact('Miguel', 'Dominguez', 'Spanish street 5');
-let contact2 = new Contact('Poop', 'Hat', 'Diarrhea alley 24');
+let person = new Person ('Vesal', 'Fayazi', 'Regeringsgatan 28');
+let pet = new Pet ('Rocky', 'Rabbit', 'Stallone');
 
-agenda.addContact(contact);
-agenda.addContact(contact1);
-agenda.addContact(contact2);
+agenda.addContact (pet);
+agenda.addContact (person);
 
-let searchContact = agenda.searchContactBySurname('Hatt');
+let searchContact = agenda.searchInAgenda('Rabbit');
 
-if (searchContact.length == 1){
+if (searchContact.length === 1){ 
     console.log(searchContact);
 }else{
     console.log('Contact is missing');
