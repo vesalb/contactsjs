@@ -23,15 +23,6 @@ export class Person implements Searchable {
         }
     }
 
-    if(vesal mår inte bra) {
-        try {
-            hål i huvudet på vesal
-        }
-        catch() {
-            mår bra
-        }
-    }
-
 }
 
 export class Pet implements Searchable{
@@ -57,6 +48,7 @@ export class Pet implements Searchable{
 
 
 export class Agenda {
+
     public contacts: Contact[] = [];
     
     public addContact(contact: Contact){
@@ -73,5 +65,14 @@ export class Agenda {
         return this.contacts.filter(search);
 
     }
+
+    public saveContacts(contact: Contact){
+         //Create file and save contacts in that file
+         
+    }
+
+    // public readExistingFile(fileName: string){
+
+    // }
 
 }

@@ -1,3 +1,20 @@
+"use strict"
+declare function require(name:string);
+
+let fs = require("fs");
+
+// Load
+let someJson = require("../data.json");
+console.log(someJson)
+
+// Save
+let obj = { a: 1, b: 2 };
+fs.writeFileSync("./data.json", JSON.stringify(obj));
+
+
+
+
+/*
 import {Agenda, Person, Pet} from './agenda';
 
 let agenda = new Agenda();
@@ -15,3 +32,4 @@ if (searchContact.length === 1){
 }else{
     console.log('Contact is missing');
 }
+*/
