@@ -46,6 +46,10 @@ export class Pet implements Searchable{
 
 }
 
+interface Serializable{
+    serialize(): string;
+    deserialize(text: string): void;
+}
 
 export class Agenda {
 
@@ -63,16 +67,19 @@ export class Agenda {
         }
 
         return this.contacts.filter(search);
-
     }
 
-    public saveContacts(contact: Contact){
-         //Create file and save contacts in that file
-         
+
+    public save(){
+        // Save
+        let obj = { a: 1, b: 2 };
+        fs.writeFileSync("./data.json", JSON.stringify(obj));
     }
 
-    // public readExistingFile(fileName: string){
-
-    // }
+    public load(){
+    // Load
+    let someJson = require("../data.json");
+    console.log(someJson)
+    }
 
 }
