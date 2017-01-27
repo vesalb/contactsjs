@@ -76,14 +76,14 @@ export class Agenda implements Serializable{
     }
 
     public serialize(){
-        let saveObj = this.contacts;
-        return fs.writeFileSync("./data.json", JSON.stringify(saveObj));
+        let saveObj = JSON.stringify(this.contacts);
+        fs.writeFileSync('./contacts.json', saveObj);
+        return saveObj;
     }
 
-    public deserialize(path: string){
-        // // Load
-    // let someJson = require("../data.json");
-    // console.log(someJson)
+    public deserialize(folderPath){
+        let someJson = require(folderPath);
+        console.log(typeof(someJson));
     }
 
 }
