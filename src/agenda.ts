@@ -1,5 +1,12 @@
+
+
 interface Searchable{
     search(searchValue:string) : boolean;
+}
+
+interface Serializable{
+    serialize(): string;
+    deserialize(text: string): void;
 }
 
 interface Contact extends Searchable {}
@@ -46,12 +53,11 @@ export class Pet implements Searchable{
 
 }
 
-interface Serializable{
-    serialize(): string;
-    deserialize(text: string): void;
-}
 
-export class Agenda {
+declare function require(name:string);
+let fs = require("fs");
+
+export class Agenda implements Serializable{
 
     public contacts: Contact[] = [];
     
@@ -69,17 +75,15 @@ export class Agenda {
         return this.contacts.filter(search);
     }
 
-
-    public save(){
-        // Save
-        let obj = { a: 1, b: 2 };
-        fs.writeFileSync("./data.json", JSON.stringify(obj));
+    public serialize(){
+        let saveObj = this.contacts;
+        return fs.writeFileSync("./data.json", JSON.stringify(saveObj));
     }
 
-    public load(){
-    // Load
-    let someJson = require("../data.json");
-    console.log(someJson)
+    public deserialize(path: string){
+        // // Load
+    // let someJson = require("../data.json");
+    // console.log(someJson)
     }
 
 }
