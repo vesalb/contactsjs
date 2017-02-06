@@ -83,7 +83,7 @@ export class Agenda implements Serializable{
 
     public deserialize(folderPath){
         let someJson = require(folderPath);
-        console.log(typeof(someJson));
+        console.log(someJson);
     }
 
 }

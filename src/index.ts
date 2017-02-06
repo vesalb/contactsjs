@@ -43,4 +43,3 @@ agenda.addContact(personTwo);
 // Save
 agenda.serialize();
 // console.log('Serialize type: ' + typeof(agenda.serialize()));
-// console.log('Serialize type: ' + agenda.serialize());
