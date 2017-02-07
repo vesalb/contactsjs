@@ -1,5 +1,3 @@
-
-
 interface Searchable{
     search(searchValue:string) : boolean;
 }
@@ -7,6 +5,10 @@ interface Searchable{
 interface Serializable{
     serialize(): string;
     deserialize(text: string): void;
+}
+
+interface Creatable{
+    create(): Contact;
 }
 
 interface Contact extends Searchable {}
@@ -60,6 +62,10 @@ let fs = require("fs");
 export class Agenda implements Serializable{
 
     public contacts: Contact[] = [];
+
+    public createContact(param1: string, param2: string, param3: string){
+        
+    }
     
     public addContact(contact: Contact){
         this.contacts.push(contact);
@@ -67,11 +73,9 @@ export class Agenda implements Serializable{
     }
 
     public searchInAgenda(searchValue: string){
-
         function search(contact: Searchable){
             return contact.search(searchValue);
         }
-
         return this.contacts.filter(search);
     }
 
