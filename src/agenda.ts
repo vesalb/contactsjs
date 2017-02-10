@@ -1,5 +1,12 @@
+
+interface Contact extends Searchable, Creatable {}
+
+interface Creatable{
+    create(objectType:string, param1: string, param2: string, param3: string): Contact;
+}
+
 interface Searchable{
-    search(searchValue:string) : boolean;
+    search(searchValue: string) : boolean;
 }
 
 interface Serializable{
@@ -7,22 +14,9 @@ interface Serializable{
     deserialize(text: string): void;
 }
 
-interface Creatable{
-    create(): Contact;
-}
+class Person implements Searchable{
 
-interface Contact extends Searchable {}
-
-export class Person implements Searchable {
-    personName: string;
-    personSurname: string;
-    personAddress: string;
-
-    constructor (name: string, surname: string, address: string){
-        this.personName=name;
-        this.personSurname=surname;
-        this.personAddress=address;
-    }
+    constructor (private personName: string, private personSurname: string, private personAddress: string){}
 
     search(searchValue: string) {
         if(searchValue === this.personSurname){
@@ -31,42 +25,43 @@ export class Person implements Searchable {
             return false
         }
     }
-
 }
 
-export class Pet implements Searchable{
-    petName: string;
-    petType: string;
-    petOwner: string;
+class Pet implements Searchable{
 
-    constructor (name: string, type: string, owner: string){
-        this.petName=name;
-        this.petType=type;
-        this.petOwner=owner;
-    }
+    constructor (private petName: string, private petType: string, private petOwner: string){}
 
     search(searchValue: string) {
         if(searchValue === this.petType){
-            return true
+            return true;
         } else {
-            return false
+            return false;
         }
     }
-
 }
 
 
 declare function require(name:string);
 let fs = require("fs");
 
-export class Agenda implements Serializable{
+export class Agenda implements Serializable, Creatable{
 
     public contacts: Contact[] = [];
 
-    public createContact(param1: string, param2: string, param3: string){
-        
+    public create(objectType, param1, param2, param3){
+        let newContact: any;
+        if(objectType === 'pet'){
+            let newContact = new Pet(param1, param2, param3);
+            return newContact;
+        }else if(objectType === 'person'){
+            let newContact = new Person(param1, param2, param3);
+            return newContact;
+        }else{
+            console.log('Contact type is missing');
+        }
+        return newContact;
     }
-    
+
     public addContact(contact: Contact){
         this.contacts.push(contact);
         return this.contacts;
